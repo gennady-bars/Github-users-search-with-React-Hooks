@@ -23,7 +23,11 @@ const GithubState = ({ children }) => {
     users: [],
     repos: [],
     loading: false,
-    error: {},
+    error: {
+      search: null,
+      getUser: null,
+      getRepos: null
+    },
   };
 
   const [state, dispatch] = useReducer(githubReducer, initialState);
@@ -85,7 +89,7 @@ const GithubState = ({ children }) => {
 
   const setLoading = () => dispatch({ type: SET_LOADING });
 
-  const setError = (error, func) => dispatch({ type: SET_ERROR, error: {error, func} });
+  const setError = (error, func) => dispatch({ type: SET_ERROR, error: {[func]: error} });
 
   return (
     <GithubContext.Provider

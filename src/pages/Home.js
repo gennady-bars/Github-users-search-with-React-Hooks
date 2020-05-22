@@ -3,8 +3,8 @@ import Search from "../components/Search";
 import Card from "../components/Card";
 import { GithubContext } from "../context/github/githubContext";
 
-const Home = (props) => {
-  const { loading, users } = useContext(GithubContext);
+const Home = () => {
+  const { loading, users, error } = useContext(GithubContext);
 
   return (
     <React.Fragment>
@@ -13,6 +13,8 @@ const Home = (props) => {
       <div className="row">
         {loading ? (
           <p className="test-center">Loading...</p>
+        ) : error.search ? (
+          <h1>Couldn't get Github users. Try again.</h1>
         ) : (
           users.map((user) => {
             return (
