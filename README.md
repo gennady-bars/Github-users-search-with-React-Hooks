@@ -2,5 +2,5 @@
 Github users search using Github API and React Hooks. I've used useReducer hook to substitute Redux.
 
 * You can search users
-* You can open any user's info
+* You can open any user's profile in a separate page
 * You can check all repos of a user
