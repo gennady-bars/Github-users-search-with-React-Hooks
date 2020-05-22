@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Search from "../components/Search";
 import Card from "../components/Card";
 import { GithubContext } from "../context/github/githubContext";
+import Loader from "../components/Loader";
 
 const Home = () => {
   const { loading, users, error } = useContext(GithubContext);
@@ -12,7 +13,7 @@ const Home = () => {
 
       <div className="row">
         {loading ? (
-          <p className="test-center">Loading...</p>
+          <Loader/>
         ) : error.search ? (
           <h1>Couldn't get Github users. Try again.</h1>
         ) : (

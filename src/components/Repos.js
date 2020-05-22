@@ -1,7 +1,9 @@
 import React from "react";
 import { Fragment } from "react";
 
-const Repos = ({ repos }) => {
+const Repos = ({ repos, error }) => {
+
+  if (error) return <h1>Couldn't get Repos...</h1>
   
   return (
     <Fragment>

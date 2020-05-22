@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { GithubContext } from "../context/github/githubContext";
 import Repos from "../components/Repos";
 import UserInfo from "../components/UserInfo";
+import Loader from "../components/Loader";
 
 const Profile = ({ match }) => {
   const { getRepos, getUser, user, repos, loading, error } = useContext(
@@ -17,7 +18,7 @@ const Profile = ({ match }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (loading) return <p className="test-center">Loading...</p>;
+  if (loading) return <Loader />;
 
   return (
     <Fragment>
@@ -25,17 +26,9 @@ const Profile = ({ match }) => {
         На главную
       </Link>
 
-      {error.getUser ? (
-        <h1>Couldn't get info about {user.login}</h1>
-      ) : (
-        <UserInfo user={user} />
-      )}
+      <UserInfo user={user} error={error.getUser} />
 
-      {error.getRepos ? (
-        <h1>Couldn't get Repos of {user.login}</h1>
-      ) : (
-        <Repos repos={repos} />
-      )}
+      <Repos repos={repos} error={error.getRepos} />
     </Fragment>
   );
 };

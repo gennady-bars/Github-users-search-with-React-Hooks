@@ -1,6 +1,6 @@
-import React, {Fragment} from 'react'
+import React, { Fragment } from "react";
 
-const UserInfo = ({user}) => {
+const UserInfo = ({ user, error }) => {
   const {
     name,
     company,
@@ -16,8 +16,10 @@ const UserInfo = ({user}) => {
     public_gists,
   } = user;
 
-    return (
-      <div className="card mb-4">
+  if (error) return <h1>Couldn't get info about {login}</h1>;
+
+  return (
+    <div className="card mb-4">
       <div className="card-body">
         <div className="row">
           <div className="col-sm-12 col-md-12 col-lg-4 text-center">
@@ -71,7 +73,7 @@ const UserInfo = ({user}) => {
         </div>
       </div>
     </div>
-    )
-}
+  );
+};
 
 export default UserInfo;
