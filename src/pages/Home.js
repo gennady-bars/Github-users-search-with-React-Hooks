@@ -13,9 +13,11 @@ const Home = () => {
 
       <div className="row">
         {loading ? (
-          <Loader/>
+          <Loader />
         ) : error.search ? (
           <h1>Couldn't get Github users. Try again.</h1>
+        ) : !users.length ? (
+          <div className="col"><h1>Введите запрос для поиска или повторите, если ничего не найдено</h1></div>
         ) : (
           users.map((user) => {
             return (

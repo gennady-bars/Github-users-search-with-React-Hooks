@@ -1,15 +1,18 @@
-import React from "react";
+import React, { Fragment } from "react";
+import Profile from "./Profile";
 
 const About = () => {
   return (
-    <div className="jumbotron">
-      <div className="container">
-        <h1 className="display-4">Information</h1>
-        <p className="lead">
-          Version 1.0.0
-        </p>
+    <Fragment>
+      <div className="jumbotron">
+        <div className="container">
+          <h1 className="display-4">Information about me</h1>
+          <p className="lead">Check out my Github account</p>
+        </div>
       </div>
-    </div>
+
+      <Profile defaultName='gennady-bars'/>
+    </Fragment>
   );
 };
 

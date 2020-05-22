@@ -5,11 +5,11 @@ import Repos from "../components/Repos";
 import UserInfo from "../components/UserInfo";
 import Loader from "../components/Loader";
 
-const Profile = ({ match }) => {
-  const { getRepos, getUser, user, repos, loading, error } = useContext(
+const Profile = ({ match, defaultName }) => {
+  const { getRepos, getUser, user, repos, loading,  error } = useContext(
     GithubContext
   );
-  const urlName = match.params.name;
+  const urlName = defaultName || match.params.name;
 
   useEffect(() => {
     getUser(urlName);

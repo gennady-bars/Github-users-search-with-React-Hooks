@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { AlertContext } from '../context/alert/alertContext'
 import { GithubContext } from '../context/github/githubContext'
 
-const Search = props => {
+const Search = () => {
     const [value, setValue] = useState('')
     const {show, hide} = useContext(AlertContext)
     const github = useContext(GithubContext)
