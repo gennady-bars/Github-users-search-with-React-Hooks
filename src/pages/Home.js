@@ -17,7 +17,12 @@ const Home = () => {
         ) : error.search ? (
           <h1>Couldn't get Github users. Try again.</h1>
         ) : !users.length ? (
-          <div className="col"><h1>Введите запрос для поиска или повторите, если ничего не найдено</h1></div>
+          <div className="col">
+            <h2>
+              Введите запрос для поиска или повторите, если ничего не найдено
+            </h2>
+            <img src="./images/git-disco.gif" alt="" className="img-fluid mx-auto d-block"/>
+          </div>
         ) : (
           users.map((user) => {
             return (
