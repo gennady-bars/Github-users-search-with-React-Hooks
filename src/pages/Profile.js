@@ -22,7 +22,7 @@ const Profile = ({ match, defaultName }) => {
 
   return (
     <Fragment>
-      <Link to="/" className="btn btn-link">
+      <Link to="/" className="btn btn-outline-dark mb-1">
         На главную
       </Link>
 

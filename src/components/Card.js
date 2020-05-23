@@ -9,7 +9,7 @@ const Card = ({user}) => {
             <h5 className='card-title'>{user.login}</h5>
             <Link
               to={`/profile/${user.login}`}
-              className='btn btn-primary'
+              className='btn btn-outline-dark'
             >
               Открыть
             </Link>
